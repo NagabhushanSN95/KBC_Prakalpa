@@ -31,6 +31,8 @@ public class SelectButton extends Button
 		super.setHeight(BUTTON_HEIGHT);
 		super.setTextColor(Color.WHITE);
 		super.setBackgroundResource(R.drawable.button_select);
+		// Disable Default Sound Effects
+		super.setSoundEffectsEnabled(false);
 		
 		ScaleAnimation scale = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f);
 		scale.setFillAfter(true);

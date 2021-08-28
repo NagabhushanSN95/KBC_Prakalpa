@@ -16,9 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/krishna"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
         android:orientation="vertical" >
 
         <custom_views.QuestionView
@@ -29,16 +28,26 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
+        
+    <custom_views.CountdownClock
+        android:id="@+id/countdownClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_question"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RelativeLayout
         android:id="@+id/layout_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_question"
+        android:layout_below="@+id/countdownClock"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:orientation="vertical" >
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
             
         <custom_views.OptionButton
             android:id="@+id/button_optionA"
@@ -75,15 +84,6 @@
             android:layout_toRightOf="@+id/button_optionC"
             android:layout_alignTop="@+id/button_optionC"
             android:layout_alignLeft="@+id/button_optionB"
-            android:gravity="center"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-        
-        <custom_views.CountdownClock
-            android:id="@+id/countdownClock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
-            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium" />
         

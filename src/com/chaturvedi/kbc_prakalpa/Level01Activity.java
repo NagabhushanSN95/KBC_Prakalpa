@@ -13,6 +13,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
@@ -44,11 +45,13 @@ public class Level01Activity extends Activity
 	private TextView questionView;
 	private RelativeLayout optionsLayout;
 	private OptionButton[] optionButtons;
+	private CountdownClock countdownClock;
 
 	private TranslateAnimation questionEnterAnimation;
 	private TranslateAnimation questionExitAnimation;
 	private TranslateAnimation optionsEnterAnimation;
 	private TranslateAnimation optionsExitAnimation;
+	private AlphaAnimation countdownClockAnimation;
 	
 	private MediaPlayerService tickPlayer;
 	private MediaPlayerService cheerPlayer;
@@ -176,15 +179,18 @@ public class Level01Activity extends Activity
 		questionExitAnimation.setFillAfter(true);
 		questionExitAnimation.setFillEnabled(true);
 		
-		optionsEnterAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 2.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+		optionsEnterAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 3.0f, Animation.RELATIVE_TO_SELF, 0.0f);
 		optionsEnterAnimation.setDuration(1000);
 		optionsEnterAnimation.setFillAfter(true);
 		optionsEnterAnimation.setFillEnabled(true);
 		
-		optionsExitAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 2.0f);
+		optionsExitAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 3.0f);
 		optionsExitAnimation.setDuration(1000);
 		optionsExitAnimation.setFillAfter(true);
 		optionsExitAnimation.setFillEnabled(true);
+		
+		countdownClockAnimation = new AlphaAnimation(0, 1);
+		countdownClockAnimation.setDuration(2000);
 	}
 	
 	private void buildLayout()
@@ -194,6 +200,8 @@ public class Level01Activity extends Activity
 		questionLayout.startAnimation(questionEnterAnimation);
 		optionsLayout = (RelativeLayout) findViewById(R.id.layout_options);
 		optionsLayout.startAnimation(optionsEnterAnimation);
+		countdownClock = (CountdownClock) findViewById(R.id.countdownClock);
+		//countdownClock.startAnimation(countdownClockAnimation);
 		
 		// Set The Question
 		questionView = (TextView) findViewById(R.id.questionView);

@@ -173,12 +173,12 @@ public class Level02Activity extends Activity
 		questionExitAnimation.setFillAfter(true);
 		questionExitAnimation.setFillEnabled(true);
 		
-		optionsEnterAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 2.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+		optionsEnterAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 3.0f, Animation.RELATIVE_TO_SELF, 0.0f);
 		optionsEnterAnimation.setDuration(1000);
 		optionsEnterAnimation.setFillAfter(true);
 		optionsEnterAnimation.setFillEnabled(true);
 		
-		optionsExitAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 2.0f);
+		optionsExitAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 3.0f);
 		optionsExitAnimation.setDuration(1000);
 		optionsExitAnimation.setFillAfter(true);
 		optionsExitAnimation.setFillEnabled(true);
