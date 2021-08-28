@@ -20,15 +20,19 @@ import android.widget.Toast;
 import custom_views.CountdownClock;
 import custom_views.OptionButton;
 
-public class Question01Activity extends Activity
+public class Level02Activity extends Activity
 {
 	private DisplayMetrics displayMetrics;
 	private int screenWidth;
 	private int screenHeight;
 	private int WIDTH_OPTION_BUTTONS;
 	private int HEIGHT_OPTION_BUTTONS;
+
+	private String SHARED_PREFERENCES_QUESTION_NOS = "questionNos";
+	private String KEY_QUESTION = "question0";							// Append 3 or 4 later depending on the level
 	
-	private static int questionNo;
+	private int levelNo;
+	private int questionNo;
 	private String question;
 	private String[] options;
 	private int answer;
@@ -39,20 +43,23 @@ public class Question01Activity extends Activity
 	private MediaPlayerService tickPlayer;
 	private MediaPlayerService cheerPlayer;
 	
-	private long TIME_ALLOTED = 10000;
+	private long TIME_ALLOTED = 60000;
 	private Handler timeoutHandler;
 	private Runnable timeoutRunnable;
 	private CountdownClock timer;
 	
-	private static final String SHARED_PREFERENCES_QUESTION_NOS = "questionNos";
-	private static final String KEY_QUESTION01 = "question01";
-	
+	private Intent previousActivityIntent;
 	private Intent nextActivityIntent;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_question01);
+		setContentView(R.layout.activity_level01);
+		
+		previousActivityIntent = getIntent();
+		levelNo = previousActivityIntent.getIntExtra("LEVEL NO", 3);
+		KEY_QUESTION+=levelNo;
 		
 		displayMetrics=new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -61,7 +68,7 @@ public class Question01Activity extends Activity
 		WIDTH_OPTION_BUTTONS = screenWidth*40/100;
 		HEIGHT_OPTION_BUTTONS = screenHeight*20/100;
 
-		tickPlayer = new MediaPlayerService(getApplicationContext(), "tick");
+		tickPlayer = new MediaPlayerService(getApplicationContext(), "tick60");
 		cheerPlayer = new MediaPlayerService(getApplicationContext(), "cheer");
 		
 		readPreferences();
@@ -73,24 +80,38 @@ public class Question01Activity extends Activity
 	private void readPreferences()
 	{
 		SharedPreferences preferences = getSharedPreferences(SHARED_PREFERENCES_QUESTION_NOS, 0);
-		if(preferences.contains(KEY_QUESTION01))
+		if(preferences.contains(KEY_QUESTION))
 		{
-			questionNo=preferences.getInt(KEY_QUESTION01, 1);
+			questionNo=preferences.getInt(KEY_QUESTION, 1);
 		}
 		else
 		{
-			questionNo=1;
+			questionNo = 1;
 		}
 	}
 	
 	private void readQuestion()
 	{
-		int numIgnoreLines = (questionNo-1)*7;
-		
-		InputStream questionStream = getResources().openRawResource(R.raw.question01);
+		int questionsResId;							// ID of the raw file containing the questions 
+		switch(levelNo)
+		{
+			case 3:									// For 3rd Level, select the raw file question01
+				questionsResId = R.raw.question03;
+				break;
+				
+			case 4:									// For 4th Level, select the raw file question02
+				questionsResId = R.raw.question04;
+				break;
+				
+			default:
+				questionsResId = R.raw.question03;
+				break;	
+		}
+		InputStream questionStream = getResources().openRawResource(questionsResId);
 		BufferedReader questionReader = new BufferedReader(new InputStreamReader(questionStream));
 		try
 		{
+			int numIgnoreLines = (questionNo-1)*7;
 			for(int i=0; i<numIgnoreLines; i++)
 			{
 				questionReader.readLine();
@@ -123,7 +144,7 @@ public class Question01Activity extends Activity
 		// Store The Next Question Number In The Shared Preferences
 		SharedPreferences preferences = getSharedPreferences(SHARED_PREFERENCES_QUESTION_NOS, 0);
 		SharedPreferences.Editor editor = preferences.edit();
-		editor.putInt(KEY_QUESTION01, questionNo);
+		editor.putInt(KEY_QUESTION, questionNo);
 		editor.commit();
 	}
 	
@@ -185,13 +206,14 @@ public class Question01Activity extends Activity
 						//Toast.makeText(getApplicationContext(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 						button.displayCorrect();
 						cheerPlayer.playMusic();
-						nextActivityIntent = new Intent(getApplicationContext(), Question01AnsweredActivity.class);
+						nextActivityIntent = new Intent(getApplicationContext(), LevelClearedActivity.class);
+						nextActivityIntent.putExtra("NUM LEVEL CLEARED", levelNo);
 					}
 					else
 					{
 						//Toast.makeText(getApplicationContext(), "Incorrect Answer!", Toast.LENGTH_SHORT).show();
 						button.displayIncorrect();
-						nextActivityIntent = new Intent(getApplicationContext(), Question01FailedActivity.class);
+						nextActivityIntent = new Intent(getApplicationContext(), LevelFailedActivity.class);
 						
 						// Display The Correct Answer
 						optionButtons[answer-1].displayCorrect();
@@ -206,7 +228,7 @@ public class Question01Activity extends Activity
 				public void run()
 				{
 					startActivity(nextActivityIntent);
-					Question01Activity.this.finish();
+					Level02Activity.this.finish();
 				}
 			} ,4000);
 			
@@ -220,7 +242,7 @@ public class Question01Activity extends Activity
 		timer.bringToFront();
 		
 		tickPlayer.playMusic();
-		nextActivityIntent = new Intent(this, Question01TimeoutActivity.class);
+		nextActivityIntent = new Intent(this, TimeoutActivity.class);
 		timeoutHandler = new Handler();
 		timeoutRunnable = new Runnable() 
 		{
@@ -230,7 +252,7 @@ public class Question01Activity extends Activity
 				timer.stopTimer();
 				tickPlayer.stopMusic();
 				startActivity(nextActivityIntent);
-				Question01Activity.this.finish();
+				Level02Activity.this.finish();
 			}
 		};
 		timeoutHandler.postDelayed(timeoutRunnable ,TIME_ALLOTED);

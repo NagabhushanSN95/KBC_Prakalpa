@@ -1,6 +1,14 @@
-1 is a
-Prime Number
-Composite Number
-Both Prime And Composite
+Find The Next Term Of The Series: 1,5,17,53,__
+72
+161
+255
 None Of These
-4
+2
+
+The value of 'a' when the following 'C' Statement is executed: a=((-5%3)+2)*7+5*3-2
+34
+13
+41
+76
+2
+end

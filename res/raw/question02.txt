@@ -1,6 +1,14 @@
-1 is a
-Prime Number
-Composite Number
-Both Prime And Composite
-None Of These
+24 is divisible by
+3
 4
+6
+All of the above
+4
+
+LCM of 12 and 8 is 
+12
+8
+4
+24
+4
+end

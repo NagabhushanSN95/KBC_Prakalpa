@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chaturvedi.kbc_prakalpa"
-    android:versionCode="003"
-    android:versionName="1.0.2" >
+    android:versionCode="004"
+    android:versionName="1.0.3" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -15,20 +15,23 @@
         android:theme="@style/AppTheme" >
         <activity 
             android:name="com.chaturvedi.kbc_prakalpa.SplashActivity">
-        </activity>
-        <activity 
-            android:name="com.chaturvedi.kbc_prakalpa.MainActivity" 
-            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.chaturvedi.kbc_prakalpa.Question01Activity"></activity>
-        <activity android:name="com.chaturvedi.kbc_prakalpa.Question01AnsweredActivity"></activity>
-        <activity android:name="com.chaturvedi.kbc_prakalpa.Question01FailedActivity"></activity>
-        <activity android:name="com.chaturvedi.kbc_prakalpa.Question01TimeoutActivity"></activity>
+        <activity 
+            android:name="com.chaturvedi.kbc_prakalpa.MainActivity" 
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.Level01Activity"></activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.Level02Activity"></activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.Level03Activity"></activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.LevelClearedActivity"></activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.LevelFailedActivity"></activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.TimeoutActivity"></activity>
+        <activity android:name="com.chaturvedi.kbc_prakalpa.PrizeActivity"></activity>
         <service android:enabled="true" android:name=".MediaPlayerService"></service>
     </application>
 

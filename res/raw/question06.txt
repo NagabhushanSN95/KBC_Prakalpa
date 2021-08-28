@@ -1,6 +1,14 @@
-1 is a
-Prime Number
-Composite Number
-Both Prime And Composite
-None Of These
-4
+Which of the following are pythagorian triplets (i)3,4,5; (ii)5,12,13; (iii)5,24,25; (iv)12,35,37
+(i), (ii) and (iii) only
+(i), (ii) and (iv) only
+(i), (iii) and (iv) only
+None Of The Above
+2
+
+Which of the following triangles are similar (i)3,4,5; (ii)5,12,13; (iii)6,8,10; (iv)7,24,25; (Note: These are the sides of the traingle)
+(i) and (iii) only
+(i), (ii) and (iv) only
+All Of The Above
+None Of The Above
+1
+end

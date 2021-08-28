@@ -1,6 +1,14 @@
-1 is a
-Prime Number
-Composite Number
-Both Prime And Composite
+Select The Correct Statement
+1 is a Prime Number
+1 is a Composite Number
+1 is both Prime And Composite
 None Of These
 4
+
+The remainder when 834271 is divided by 3
+0
+1
+2
+3
+2
+end

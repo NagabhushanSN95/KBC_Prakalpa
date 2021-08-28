@@ -24,7 +24,7 @@ public class MainActivity extends Activity
 
 	private SelectButton playButton;
 	
-	Intent question01Intent;
+	Intent level01Intent;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -55,8 +55,9 @@ public class MainActivity extends Activity
 					@Override
 					public void onClick(DialogInterface dialog, int which)
 					{
-						question01Intent = new Intent(MainActivity.this, Question01Activity.class);
-						startActivity(question01Intent);
+						level01Intent = new Intent(MainActivity.this, Level01Activity.class);
+						level01Intent.putExtra("LEVEL NO", 1);
+						startActivity(level01Intent);
 					}
 				});
 				playDialog.setNegativeButton("Nope", null);
