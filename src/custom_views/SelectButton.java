@@ -13,6 +13,9 @@ public class SelectButton extends Button
 {
 	private int BUTTON_WIDTH = 200;
 	private int BUTTON_HEIGHT = 30;
+	
+	private MediaPlayerService buttonClickPlayer;
+	
 	public SelectButton(Context context)
 	{
 		super(context);
@@ -38,6 +41,7 @@ public class SelectButton extends Button
 		scale.setRepeatMode(ScaleAnimation.REVERSE);
 		super.startAnimation(scale);
 		
+		buttonClickPlayer = new MediaPlayerService(getContext(), "button_click");
 		super.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
@@ -62,6 +66,6 @@ public class SelectButton extends Button
 	
 	public void clickButton()
 	{
-		MediaPlayerService.playMusic(getContext(), "button_click");
+		buttonClickPlayer.playMusic();
 	}
 }

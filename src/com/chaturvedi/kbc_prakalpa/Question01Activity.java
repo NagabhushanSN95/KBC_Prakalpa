@@ -36,6 +36,9 @@ public class Question01Activity extends Activity
 	private TextView questionView;
 	private OptionButton[] optionButtons;
 	
+	private MediaPlayerService tickPlayer;
+	private MediaPlayerService cheerPlayer;
+	
 	private long TIME_ALLOTED = 10000;
 	private Handler timeoutHandler;
 	private Runnable timeoutRunnable;
@@ -57,6 +60,9 @@ public class Question01Activity extends Activity
 		screenHeight=displayMetrics.heightPixels;
 		WIDTH_OPTION_BUTTONS = screenWidth*40/100;
 		HEIGHT_OPTION_BUTTONS = screenHeight*20/100;
+
+		tickPlayer = new MediaPlayerService(getApplicationContext(), "tick");
+		cheerPlayer = new MediaPlayerService(getApplicationContext(), "cheer");
 		
 		readPreferences();
 		readQuestion();
@@ -162,7 +168,7 @@ public class Question01Activity extends Activity
 			// Stop The Timeout Handler
 			timeoutHandler.removeCallbacks(timeoutRunnable);
 			// Stop The Tick-Tick Sound
-			MediaPlayerService.stopMusic();
+			tickPlayer.stopMusic();
 			// Stop The Timer Showing The Number Of Seconds Left
 			timer.stopTimer();
 			
@@ -178,7 +184,7 @@ public class Question01Activity extends Activity
 					{
 						//Toast.makeText(getApplicationContext(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 						button.displayCorrect();
-						MediaPlayerService.playMusic(getApplicationContext(), "cheer");
+						cheerPlayer.playMusic();
 						nextActivityIntent = new Intent(getApplicationContext(), Question01AnsweredActivity.class);
 					}
 					else
@@ -213,7 +219,7 @@ public class Question01Activity extends Activity
 		timer.startTimer(TIME_ALLOTED);
 		timer.bringToFront();
 		
-		MediaPlayerService.playMusic(getApplicationContext(), "tick");
+		tickPlayer.playMusic();
 		nextActivityIntent = new Intent(this, Question01TimeoutActivity.class);
 		timeoutHandler = new Handler();
 		timeoutRunnable = new Runnable() 
@@ -222,7 +228,7 @@ public class Question01Activity extends Activity
 			public void run()
 			{
 				timer.stopTimer();
-				MediaPlayerService.stopMusic();
+				tickPlayer.stopMusic();
 				startActivity(nextActivityIntent);
 				Question01Activity.this.finish();
 			}

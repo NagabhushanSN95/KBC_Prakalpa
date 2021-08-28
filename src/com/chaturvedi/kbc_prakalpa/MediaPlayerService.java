@@ -8,14 +8,22 @@ import android.media.MediaPlayer;
 
 public class MediaPlayerService
 {
-	private static MediaPlayer mediaPlayer;
+	private Context context;
+	private String fileName;
+	private MediaPlayer mediaPlayer;
 	
-	public static void playMusic(Context context, String fileName)
+	public MediaPlayerService(Context cxt, String fName)
+	{
+		context = cxt;
+		fileName = "sound/"+fName+".mp3";
+	}
+	
+	public void playMusic()
 	{
 		try
 		{
 			mediaPlayer = new MediaPlayer();
-			AssetFileDescriptor afd = context.getAssets().openFd("sound/"+fileName+".mp3");
+			AssetFileDescriptor afd = context.getAssets().openFd(fileName);
 			mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 			afd.close();
 			mediaPlayer.prepare();
@@ -27,7 +35,7 @@ public class MediaPlayerService
 		}
 	}
 	
-	public static void stopMusic()
+	public void stopMusic()
 	{
 		if(mediaPlayer.isPlaying())
 			mediaPlayer.stop();

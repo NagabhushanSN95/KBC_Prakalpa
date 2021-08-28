@@ -7,6 +7,7 @@ import android.os.Handler;
 
 public class SplashActivity extends Activity
 {
+	private MediaPlayerService kbcPlayer;
 	private Intent  mainIntent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -24,6 +25,7 @@ public class SplashActivity extends Activity
 				finish();
 			}
 		} ,12000);
-		MediaPlayerService.playMusic(getApplicationContext(), "startup");
+		kbcPlayer = new MediaPlayerService(getApplicationContext(), "startup");
+		kbcPlayer.playMusic();
 	}
 }
