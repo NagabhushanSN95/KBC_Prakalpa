@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000FF" >
+
+    <TextView
+        android:id="@+id/congrats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Congratulations!!!"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" >
+
+        <TextView
+            android:id="@+id/question06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="54dp"
+            android:text="Question 06"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/question05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question06"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Question 05"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/question04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question05"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Question 04"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/question03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question04"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Question 03"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/question02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question03"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Question 02"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/question01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question02"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Question 01"
+            android:textColor="#FFFF00"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+
+</RelativeLayout>

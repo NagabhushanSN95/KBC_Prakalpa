@@ -1,0 +1,6 @@
+1 is a
+Prime Number
+Composite Number
+Both Prime And Composite
+None Of These
+4
