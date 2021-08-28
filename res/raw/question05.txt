@@ -1,14 +1,70 @@
-Find The Next Term Of The Series: 1,5,17,53,__
-72
-161
-255
-None Of These
-2
-
 The value of 'a' when the following 'C' Statement is executed: a=((-5%3)+2)*7+5*3-2
 34
 13
 41
 76
+
+
+Two moving trains separated by 6000m are approaching each other with velocities 30kmph and 90kmph. What is the time taken by them to collide
+3 Minutes
+4 Minutes
+6 Minutes
+12 Minutes
+1
+
+If a ball is dropped freely from a height of 36m and assuming it bounces to half the height from which it is dropped, what is the total distance travelled by the ball before it comes to rest?
+72
+106
+108
+144
+3
+
+If one-third of one-fourth of a number is 15, then three-tenth of that number is
+35
+36
+45
+54
+4
+
+The difference between a two-digit number and the number obtained by interchanging the positions of its digits is 36. What is the number
+03
+04
+09
+None
 2
+
+A two-digit number is such that the product of digits is 8. When 18 is added to the number, then the digits are reveresed. Find the number.
+18
+24
+42
+81
+2
+
+'a' to the power of 'b' is equal to 'b' to the power of 'a', a>b. Find a and b.
+1,1
+4,2
+2,4
+1,-1
+2
+
+The sum of the digits of a two-digit number is 15 and the difference between the digits is 3. What is the number?
+69
+96
+both
+none
+3
+
+The sum of the squares of three numbers is 138, while the sum of their products taken two at a time is 131. Their sum is:
+20
+30
+40
+None
+1
+
+Find a positive number which when increased by 17 is equal to 60 times the reciprocal of the number.
+3
+10
+17
+None
+1
 end

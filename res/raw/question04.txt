@@ -1,14 +1,77 @@
-Select The Correct Statement
-1 is a Prime Number
-1 is a Composite Number
-1 is both Prime And Composite
+Find The Next Term Of The Series: 1,5,17,53,__
+72
+161
+255
 None Of These
+2
+
+When was the constitution of India adopted?
+January 26, 1947
+January 26, 1950
+August 15, 1947
+November 26, 1949
 4
 
-The remainder when 834271 is divided by 3
-0
+For what work did Einstein get the Nobel prize?
+Photoelectric Effect
+Relativity
+Basic Proportionality Theorem
+Radiography
 1
+
+In Mahabharata, who is called as 'Gangeya'?
+Bheema
+Bheeshma
+Krishna
+Duryodhana
 2
+
+For how many days was the war of Mahabharata fought?
+10
+9
+18
+None
 3
+
+Delhi was earlier known as
+Indraprastha
+Vanaprastha
+Hastinapura
+None of these
+1
+
+In Ramayana, whom did Rama worship at Rameshwara?
+Rama
+Shiva
+Krishna
+Vishnu
+2
+
+Where was Lord Krishna born?
+Palace
+Village
+Forest
+Prison
+4
+
+Who was the brother of Lord Krishna?
+Rama
+Balarama
+Lakshma
+Arjuna
+2
+
+Who was the father of Lord Rama?
+Janaka
+Dhrutarashtra
+Dasharatha
+None of these
+3
+
+Who among the following was not killed in the battle of Mahabharata?
+Karna
+Ashwathama
+Bheeshma
+None of these
 2
 end

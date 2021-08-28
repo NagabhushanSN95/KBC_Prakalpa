@@ -5,10 +5,164 @@
 All of the above
 4
 
-LCM of 12 and 8 is 
+How many sides does a Nonagon have
+7
+9
+19
+11
+2
+
+If two angles of an equilateral triangle are 70 & 70, what is the third angle
+70
+40
+60
+Not Possible
+4
+
+Pick the odd man out: 8, 27, 64, 100, 125, 216, 343
+27
+100
+125
+343
+2
+
+What is the obtuse angle between the hands of a clock when it shows 8:00
+60
+120
+180
+240
+2
+
+What is the value of 3 to the power of 5
+200
+400
+243
+600
+3
+
+903642 is divisible by
+3
+4
+Both (a) & (b)
+None Of These
+1
+
+The remainder when 834271 is divided by 3
+0
+1
+2
+3
+2
+
+What is the remainder when 1387521 is divided by 4?
+0 
+1
+2
+3
+2
+
+Pick the odd man out
+Narendra Modi
+P V Narasimha Rao
+Lal Bahadur Shastri
+Rajendra Prasad
+4
+
+Who is the first woman president of India?
+Alia Bhatt
+Indira Gandhi
+Sonia Gandhi
+Pratibha Patil
+4
+
+Who is the first woman Prime Minister Of India?
+Alia Bhatt
+Indira Gandhi
+Sonia Gandhi
+Pratibha Patil
+2
+
+Which is the IT Capital Of India
+Delhi
+Hyderabad
+Bengaluru
+Mumbai
+3
+
+Which of the following is not a name given to Bengaluru
+Pink City
+Silicon City
+Garden City
+Benda Kalooru
+1
+
+Which of the following is not an Anti-Virus?
+Avast
+Kaspersky
+360'
+Trojan
+4
+
+Who is called the wall of India?
+Sachin Tendulkar
+Kapil Dev
+Rahul Dravid
+Cheteshwara Pujara
+3
+
+Who is called the Iron Man Of India?
+Sardar Vallabhbhai Patel
+Narendra Modi
+Subhash Chandra Bose
+Chandrashekhar Azad
+1
+
+Who is the first Prime Minister Of India?
+Mahatma Gandhi
+Jawaharalal Nehru
+Lal Bahaddur Shastri
+Zail Singh
+2
+
+When did the constitution of India came into force?
+January 26, 1947
+January 26, 1950
+August 15, 1947
+November 26, 1949
+2
+
+What is the national game of India?
+Cricket
+Hockey
+Chess
+Football
+2
+
+What is the circumference of circle with a radius 3cm
+3cm
+6cm
+3*pi cm
+6*pi cm
+4
+
+Which is the Commercial Capital Of India?
+Delhi
+Mumbai
+Kolkata
+Chennai
+2
+
+LCM (Lowest Common Multiple) of 12 and 8 is 
 12
 8
 4
 24
 4
+
+Which team won the Cricket World Cup 2011?
+India
+Pakistan
+Australia
+South Africa
+1
 end

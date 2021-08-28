@@ -269,7 +269,8 @@ public class Level01Activity extends Activity
 					{
 						//Toast.makeText(getApplicationContext(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 						button.displayCorrect();
-						cheerPlayer.playMusic();
+						//cheerPlayer.playMusic();
+						MediaPlayerService.playSound(getApplicationContext(), "correct_answer");
 						nextActivityIntent = new Intent(getApplicationContext(), LevelClearedActivity.class);
 						nextActivityIntent.putExtra("NUM LEVEL CLEARED", levelNo);
 					}
@@ -277,7 +278,9 @@ public class Level01Activity extends Activity
 					{
 						//Toast.makeText(getApplicationContext(), "Incorrect Answer!", Toast.LENGTH_SHORT).show();
 						button.displayIncorrect();
+						MediaPlayerService.playSound(getApplicationContext(), "wrong_answer");
 						nextActivityIntent = new Intent(getApplicationContext(), LevelFailedActivity.class);
+						nextActivityIntent.putExtra("NUM LEVEL FAILED", levelNo);
 						
 						// Display The Correct Answer
 						optionButtons[answer-1].displayCorrect();
@@ -318,6 +321,7 @@ public class Level01Activity extends Activity
 		
 		tickPlayer.playMusic();
 		nextActivityIntent = new Intent(this, TimeoutActivity.class);
+		nextActivityIntent.putExtra("NUM LEVEL TIMEOUT", levelNo);
 		timeoutHandler = new Handler();
 		timeoutRunnable = new Runnable() 
 		{

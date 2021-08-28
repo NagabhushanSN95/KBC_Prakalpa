@@ -1,3 +1,87 @@
+Select The Correct Statement
+1 is a Prime Number
+1 is a Composite Number
+1 is both Prime And Composite
+None Of These
+4
+
+Which is the smallest 3 digit prime number?
+100
+101
+102
+103
+2
+
+HCF (Highest Common Factor) of 54 and 81 is
+54
+27
+9
+6
+2
+
+What is the probability of getting a sum of 9 when two die are rolled
+1/9
+1/12
+1/6
+2/9
+1
+
+5 diodes and 15 transistors cost Rs50. 3 diodes and 9 transistors cost Rs30. What is the cost of 2 diodes and 6 transistors?
+80
+50
+30
+20
+4
+
+A regular hexagon is divided into 6 equilateral triangles. What is the angle of the first (Left-Top) Triangle?
+30
+45
+60
+90
+3
+
+How many junctions does a BJT Transistor have?
+3
+2
+1
+0
+2
+
+What is the probability of getting a 1 in the second dice, when two die are rolled, given that 2 is obtained in second die
+1/36
+1/6
+2/36
+1/5
+2
+
+What is the surface area of a sphere of radius 'r'?
+4/3*pi*r*r*r
+2/3*pi*r*r*r
+4*pi*r*r
+2*pi*r*r
+3
+
+Two turtles one big and one little are walking together. The little turtle is the son of the big turtle, but the big turtle is not the father of little turtle. Then who is the big turtle?
+Step Father
+Mother
+Stranger
+None
+2
+
+Which City in India is called as Pink City?
+Bengaluru
+Coimbatore
+Shimla
+Jaipur
+4
+
+What will be the minimum number weeks in a year?
+50
+51
+52
+53
+3
+
 Find The Next Term: 0,1,1,2,3,5,8,13,21,34,__
 45
 54
@@ -5,10 +89,52 @@ Find The Next Term: 0,1,1,2,3,5,8,13,21,34,__
 44
 3
 
-HCF of 54 and 81 is
-54
-27
+A Worm is climbing a tree which is 20ft tall. During the day, it climbs 5ft,but during night it slides down 3ft. How many days does it require to climb the tree
+8
 9
-6
+10
+11
+2
+
+4500*x=3375. Find x
+2/5
+3/4
+1/4
+3/5
+2
+
+What is the phase difference between a sine wave and a cosine wave
+45
+30
+90
+None
+3
+
+October 2nd is the birthday of ____
+Mahatma Gandhi
+Lal Bahadur Shastri
+Both (a) and (b)
+None of the above
+3
+
+If w is a cube-root of '1', what is the value of 1+w(1+w)?
+0
+1
+2
+3
+1
+
+Tickets numbered 1 to 20 are mixed up and then a ticket is drawn at random. What is the probability that the ticket drawn has a number which is a multiple of 3 or 5?
+1/2
+2/5
+8/15
+9/20
+4
+
+At the entrance, there is a gem generator game. What is the probability that you'll get 5 gems?
+1/5
+1/4
+2/5
+None
 2
 end

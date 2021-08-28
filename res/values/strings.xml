@@ -4,5 +4,6 @@
     <string name="app_name">KBC</string>
     <string name="action_settings">Settings</string>
     <string name="krishna">Shree KRISHNAya Namaha</string>
+    <color name="background_default">#000000</color>
 
 </resources>

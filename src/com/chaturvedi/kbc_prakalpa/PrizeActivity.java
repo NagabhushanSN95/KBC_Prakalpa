@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import custom_views.QuitDialog;
 import custom_views.SelectButton;
 import custom_views.SelectButtonMini;
@@ -14,6 +18,9 @@ public class PrizeActivity extends Activity
 	private SelectButton playButton;
 	private SelectButtonMini quitButton;
 	private QuitDialog quitDialog;
+	
+	private ImageView[] stars;
+	private AnimationSet[] starAnimation; 
 	
 	private Intent splashIntent;
 	@Override
@@ -25,8 +32,71 @@ public class PrizeActivity extends Activity
 		MediaPlayerService kbcPlayer = new MediaPlayerService(getApplicationContext(), "startup");
 		kbcPlayer.playMusic();
 		
+		buildAnimations();
 		buildLayout();
 		splashIntent = new Intent(this, SplashActivity.class);
+	}
+	
+	private void buildAnimations()
+	{
+		stars = new ImageView[3];
+		stars[0] = (ImageView) findViewById(R.id.star01);
+		stars[1] = (ImageView) findViewById(R.id.star02);
+		stars[2] = (ImageView) findViewById(R.id.star03);
+		
+		starAnimation = new AnimationSet[3];
+		for(int i=0; i<3; i++)
+		{
+			Animation alphaAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_star);
+			Animation rotation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_star);
+			starAnimation[i] = new AnimationSet(false);
+			starAnimation[i].addAnimation(alphaAnimation);
+			starAnimation[i].addAnimation(rotation);
+			
+			stars[i].setVisibility(View.GONE);
+		}
+		
+		stars[0].setVisibility(View.VISIBLE);
+		stars[0].startAnimation(starAnimation[0]);
+		
+		new Handler().postDelayed(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				stars[1].setVisibility(View.VISIBLE);
+				stars[1].startAnimation(starAnimation[1]);
+			}
+		}, 500);
+		
+		new Handler().postDelayed(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				stars[2].setVisibility(View.VISIBLE);
+				stars[2].startAnimation(starAnimation[2]);
+				stars[0].setVisibility(View.GONE);
+			}
+		}, 1000);
+		
+		new Handler().postDelayed(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				stars[1].setVisibility(View.GONE);
+			}
+		}, 1500);
+		
+		new Handler().postDelayed(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				stars[2].setVisibility(View.GONE);
+			}
+		}, 2000);
 	}
 	
 	private void buildLayout()

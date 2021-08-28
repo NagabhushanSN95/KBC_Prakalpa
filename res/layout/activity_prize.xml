@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/winner"
     android:keepScreenOn="true" >
 
     <TextView
@@ -12,21 +13,13 @@
         android:layout_centerHorizontal="true"
         android:text="@string/krishna" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/splash_icon" />
-
     <custom_views.SelectButton
         android:id="@+id/button_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/krishna"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="300dp"
         android:text="Play Again" />
 
     <custom_views.SelectButtonMini
@@ -37,5 +30,32 @@
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         android:text="Quit" />
+
+    <ImageView
+        android:id="@+id/star01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="26dp"
+        android:layout_toLeftOf="@+id/krishna"
+        android:src="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/star02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/krishna"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/star" />
+
+    <ImageView
+        android:id="@+id/star03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/krishna"
+        android:src="@drawable/star" />
 
 </RelativeLayout>

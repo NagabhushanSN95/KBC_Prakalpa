@@ -2,8 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:keepScreenOn="true"
-    android:background="#0000FF" >
+    android:background="#000000"
+    android:padding="@dimen/margin_default"
+    android:keepScreenOn="true" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_default" >
 
     <TextView
         android:id="@+id/krishna"
@@ -106,5 +112,5 @@
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:text="Next" />
-
+</RelativeLayout>
 </RelativeLayout>

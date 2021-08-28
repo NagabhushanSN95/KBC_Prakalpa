@@ -5,10 +5,157 @@ Both Prime And Composite
 None Of These
 1
 
-903642 is divisible by
+What is our galaxy called
+Andromeda
+Milky Way
+Doodh Sagar
+Hubble
+2
+
+Who is called the father of computer
+Blaise Pascal
+Aryabhata
+Charles Babbage
+Euler
+3
+
+Who of the following got a Nobel prize for literature
+C V Raman
+Rabindranath Tagore
+R K Narayan
+Kuvempu
+2
+
+Which of the following scientists are not Nobel Laureates Of India
+Amartya Sen
+C V Raman
+S Chandrashekhar
+J C Bose
+4
+
+Pick The Prime Number
+15
+17
+18
+21
+2
+
+Pick A Prime Number Divisible By 3
+15
+17
+18
+None
+4
+
+Which of the following is not divisible by 5
+12345
+56120
+54641
+51560
+3
+
+What is the remainder when 123465 is divided by 10
+0
+5
+3
+2
+2
+
+Pick the odd option
+4/8
+9/18
+3/9
+7/14
+3
+
+Complete the English Proverb: Where there is a will
+There is a wolf
+There is a well
+There is a way
+None of these
+3
+
+Complete the English Proverb: Every Dog has its 
+Tail
+Day
+Night
+Legs
+2
+
+Time And Tide waits for
+Hours
+Friend
+Sun
+None
+4
+
+Complete The English Proverb: Hope for the best, Prepare for _____
+best
+all
+worst
+None
+3
+
+Complete The English Proverb: He who fears your presence, will ______ your absence
+Love
+Hate
+Enjoy
+None
+2
+
+Which is the smallest composite number?
+1
+2
 3
 4
-Both (a) & (b)
-None Of These
+4
+
+What is the smallest number to be added to 12674 to make it divisible by 5
+3
 1
+5
+6
+2
+
+Fill in the English Proverb: Every Cloud has a _____ lining
+Golden
+Silver
+Bronze
+None
+2
+
+Fill in the English Proverb: Curiosity killed the ___
+dog
+mouse
+man
+cat
+4
+
+Fill in the English Proverb: Practice makes ___ perfect
+Person
+Woman
+Man
+Child
+3
+
+Find the missing number: 1,4,9,16,25,__,49,64,81,100
+36
+39
+42
+48
+1
+
+RBI is the abbreviation for
+Reverse Bank Of India
+Robbing Bank Of India
+Reserve Bank Of India
+None Of These
+3
+
+How many players will be there in a team in Cricket?
+10
+6
+15
+11
+4
 end
