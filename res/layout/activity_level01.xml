@@ -12,7 +12,7 @@
         android:text="@string/krishna" />
 
     <LinearLayout
-        android:id="@+id/questionLayout"
+        android:id="@+id/layout_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/krishna"
@@ -31,10 +31,10 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/answerLayout"
+        android:id="@+id/layout_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/questionLayout"
+        android:layout_below="@+id/layout_question"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
@@ -53,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/button_optionA"
             android:layout_alignTop="@+id/button_optionA"
+            android:layout_marginLeft="10dp"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium" />
             
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/button_optionA"
             android:layout_alignLeft="@+id/button_optionA"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium" />
             

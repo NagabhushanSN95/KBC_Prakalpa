@@ -10,7 +10,7 @@ public class MediaPlayerService
 {
 	private Context context;
 	private String fileName;
-	private MediaPlayer mediaPlayer;
+	private MediaPlayer musicPlayer;
 	
 	public MediaPlayerService(Context cxt, String fName)
 	{
@@ -22,12 +22,30 @@ public class MediaPlayerService
 	{
 		try
 		{
-			mediaPlayer = new MediaPlayer();
+			musicPlayer = new MediaPlayer();
 			AssetFileDescriptor afd = context.getAssets().openFd(fileName);
-			mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+			musicPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 			afd.close();
-			mediaPlayer.prepare();
-			mediaPlayer.start();
+			musicPlayer.prepare();
+			musicPlayer.start();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public static void playSound(Context context, String fileName)
+	{
+		try
+		{
+			fileName = "sound/"+fileName+".mp3";
+			MediaPlayer soundPlayer = new MediaPlayer();
+			AssetFileDescriptor afd = context.getAssets().openFd(fileName);
+			soundPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+			afd.close();
+			soundPlayer.prepare();
+			soundPlayer.start();
 		}
 		catch (IOException e)
 		{
@@ -37,7 +55,7 @@ public class MediaPlayerService
 	
 	public void stopMusic()
 	{
-		if(mediaPlayer.isPlaying())
-			mediaPlayer.stop();
+		if(musicPlayer.isPlaying())
+			musicPlayer.stop();
 	}
 }

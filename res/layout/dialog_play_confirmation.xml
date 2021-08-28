@@ -1,33 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    tools:context=".MainActivity" >
+    android:background="@drawable/dialog_quit" >
 
     <TextView
-        android:id="@+id/krishna"
+        android:id="@+id/view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/krishna" />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Are You Ready To Take Up The Challenge?"
+        android:textColor="#444444" />
 
     <custom_views.SelectButton
         android:id="@+id/button_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/krishna"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="Play" />
-
-    <custom_views.SelectButtonMini
-        android:id="@+id/button_rules"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
+        android:text="Proceed" />
+
+    <custom_views.SelectButtonMini
+        android:id="@+id/button_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/button_play"
-        android:text="Rules" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:text="Nope" />
 
 </RelativeLayout>

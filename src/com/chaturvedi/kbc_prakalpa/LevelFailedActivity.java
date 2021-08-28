@@ -34,6 +34,9 @@ public class LevelFailedActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				startActivity(splashIntent);
 				finish();
 			}
@@ -45,6 +48,9 @@ public class LevelFailedActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				onBackPressed();
 			}
 		});
@@ -60,7 +66,7 @@ public class LevelFailedActivity extends Activity
 				playButton.setVisibility(View.VISIBLE);
 				quitButton.setVisibility(View.VISIBLE);
 			}
-		}, 5000);
+		}, 2000);
 	}
 	
 	public void onBackPressed()
@@ -72,6 +78,9 @@ public class LevelFailedActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				quitDialog.dismiss();
 			}
 		});
@@ -80,6 +89,9 @@ public class LevelFailedActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				quitDialog.dismiss();
 				finish();
 			}

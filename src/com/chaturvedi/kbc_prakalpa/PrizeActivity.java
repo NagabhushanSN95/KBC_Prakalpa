@@ -37,6 +37,9 @@ public class PrizeActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				startActivity(splashIntent);
 				finish();
 			}
@@ -48,6 +51,9 @@ public class PrizeActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				onBackPressed();
 			}
 		});
@@ -75,6 +81,9 @@ public class PrizeActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				quitDialog.dismiss();
 			}
 		});
@@ -83,6 +92,9 @@ public class PrizeActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				quitDialog.dismiss();
 				finish();
 			}

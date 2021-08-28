@@ -46,6 +46,9 @@ public class LevelClearedActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
+				// Play The Button-Click Sound
+				MediaPlayerService.playSound(getApplicationContext(), "button_click");
+				
 				startActivity(nextActivityIntent);
 				finish();
 			}

@@ -12,8 +12,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,11 +25,11 @@ import custom_views.OptionButton;
 
 public class Level01Activity extends Activity
 {
-	private DisplayMetrics displayMetrics;
+	/*private DisplayMetrics displayMetrics;
 	private int screenWidth;
 	private int screenHeight;
 	private int WIDTH_OPTION_BUTTONS;
-	private int HEIGHT_OPTION_BUTTONS;
+	private int HEIGHT_OPTION_BUTTONS;*/
 
 	private String SHARED_PREFERENCES_QUESTION_NOS = "questionNos";
 	private String KEY_QUESTION = "question0";							// Append 1 or 2 later depending on the level
@@ -37,8 +40,15 @@ public class Level01Activity extends Activity
 	private String[] options;
 	private int answer;
 	
+	private LinearLayout questionLayout;
 	private TextView questionView;
+	private RelativeLayout optionsLayout;
 	private OptionButton[] optionButtons;
+
+	private TranslateAnimation questionEnterAnimation;
+	private TranslateAnimation questionExitAnimation;
+	private TranslateAnimation optionsEnterAnimation;
+	private TranslateAnimation optionsExitAnimation;
 	
 	private MediaPlayerService tickPlayer;
 	private MediaPlayerService cheerPlayer;
@@ -61,18 +71,19 @@ public class Level01Activity extends Activity
 		levelNo = previousActivityIntent.getIntExtra("LEVEL NO", 1);
 		KEY_QUESTION+=levelNo;
 		
-		displayMetrics=new DisplayMetrics();
+		/*displayMetrics=new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 		screenWidth=displayMetrics.widthPixels;
 		screenHeight=displayMetrics.heightPixels;
 		WIDTH_OPTION_BUTTONS = screenWidth*40/100;
-		HEIGHT_OPTION_BUTTONS = screenHeight*20/100;
+		HEIGHT_OPTION_BUTTONS = screenHeight*20/100;*/
 
 		tickPlayer = new MediaPlayerService(getApplicationContext(), "tick30");
 		cheerPlayer = new MediaPlayerService(getApplicationContext(), "cheer");
 		
 		readPreferences();
 		readQuestion();
+		buildAnimations();
 		buildLayout();
 		setTimeout();
 	}
@@ -151,8 +162,40 @@ public class Level01Activity extends Activity
 		editor.commit();
 	}
 	
+	private void buildAnimations()
+	{
+		// Set Animations 
+		
+		questionEnterAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, -2.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+		questionEnterAnimation.setDuration(1000);
+		questionEnterAnimation.setFillAfter(true);
+		questionEnterAnimation.setFillEnabled(true);
+		
+		questionExitAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, -2.0f);
+		questionExitAnimation.setDuration(1000);
+		questionExitAnimation.setFillAfter(true);
+		questionExitAnimation.setFillEnabled(true);
+		
+		optionsEnterAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 2.0f, Animation.RELATIVE_TO_SELF, 0.0f);
+		optionsEnterAnimation.setDuration(1000);
+		optionsEnterAnimation.setFillAfter(true);
+		optionsEnterAnimation.setFillEnabled(true);
+		
+		optionsExitAnimation = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 2.0f);
+		optionsExitAnimation.setDuration(1000);
+		optionsExitAnimation.setFillAfter(true);
+		optionsExitAnimation.setFillEnabled(true);
+	}
+	
 	private void buildLayout()
 	{
+		// Start Animation
+		questionLayout = (LinearLayout) findViewById(R.id.layout_question);
+		questionLayout.startAnimation(questionEnterAnimation);
+		optionsLayout = (RelativeLayout) findViewById(R.id.layout_options);
+		optionsLayout.startAnimation(optionsEnterAnimation);
+		
+		// Set The Question
 		questionView = (TextView) findViewById(R.id.questionView);
 		questionView.setText(question);
 		
@@ -166,8 +209,8 @@ public class Level01Activity extends Activity
 		for(int i=0; i<4; i++)
 		{
 			optionButtonParams[i] = (LayoutParams) optionButtons[i].getLayoutParams();
-			optionButtonParams[i].width=WIDTH_OPTION_BUTTONS;
-			optionButtonParams[i].height=HEIGHT_OPTION_BUTTONS;
+			//optionButtonParams[i].width=WIDTH_OPTION_BUTTONS;
+			//optionButtonParams[i].height=HEIGHT_OPTION_BUTTONS;
 			optionButtons[i].setLayoutParams(optionButtonParams[i]);
 			optionButtons[i].setText(options[i]);
 			optionButtons[i].setOnClickListener(new AnswerListener(i+1));
@@ -186,6 +229,9 @@ public class Level01Activity extends Activity
 		@Override
 		public void onClick(View v)
 		{
+			// Play The Button-Click Sound
+			MediaPlayerService.playSound(getApplicationContext(), "button_click");
+			
 			final OptionButton button = (OptionButton) v;
 			button.lockOption();
 			
@@ -196,10 +242,11 @@ public class Level01Activity extends Activity
 			// Stop The Timer Showing The Number Of Seconds Left
 			timer.stopTimer();
 			
-			// Disable all other buttons
+			// Disable all the buttons and stop the animation
 			for(int i=0; i<4; i++)
 			{
 				optionButtons[i].setClickable(false);
+				optionButtons[i].clearAnimation();
 			}
 			
 			new Handler().postDelayed(new Runnable() 
@@ -229,6 +276,17 @@ public class Level01Activity extends Activity
 					}
 				}
 			} ,2000);
+			
+			// Send Out The Views By Animation For 1second
+			new Handler().postDelayed(new Runnable() 
+			{
+				@Override
+				public void run()
+				{
+					questionLayout.startAnimation(questionExitAnimation);
+					optionsLayout.startAnimation(optionsExitAnimation);
+				}
+			} ,3000);
 			
 			// Start The Next Activity After 4seconds i.e. 2seconds after the result is displayed
 			new Handler().postDelayed(new Runnable() 

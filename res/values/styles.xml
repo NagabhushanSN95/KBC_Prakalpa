@@ -16,5 +16,20 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="dialog_animation" >
+        <item name="android:windowEnterAnimation" >@anim/dialog_slide_up</item>
+        <item name="android:windowExitAnimation" >@anim/dialog_slide_down</item>
+    </style>
+    
+    <style name="question_animation" >
+        <item name="android:windowEnterAnimation" >@anim/question_slide_up</item>
+        <item name="android:windowExitAnimation" >@anim/question_slide_down</item>
+    </style>
+    
+    <style name="options_animation" >
+        <item name="android:windowEnterAnimation" >@anim/options_slide_up</item>
+        <item name="android:windowExitAnimation" >@anim/options_slide_down</item>
+    </style>
 
 </resources>

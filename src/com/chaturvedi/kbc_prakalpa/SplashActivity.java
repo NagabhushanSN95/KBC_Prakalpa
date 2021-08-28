@@ -7,7 +7,8 @@ import android.os.Handler;
 
 public class SplashActivity extends Activity
 {
-	private MediaPlayerService kbcPlayer;
+	private int SPLASH_TIME = 12000;		//12 Seconds
+	private MediaPlayerService musicPlayer;
 	private Intent  mainIntent;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -24,9 +25,9 @@ public class SplashActivity extends Activity
 				startActivity(mainIntent);
 				finish();
 			}
-		} ,12000);
-		kbcPlayer = new MediaPlayerService(getApplicationContext(), "startup");
-		kbcPlayer.playMusic();
+		} ,SPLASH_TIME);
+		musicPlayer = new MediaPlayerService(getApplicationContext(), "startup");
+		musicPlayer.playMusic();
 	}
 	
 	// Disable Back Button

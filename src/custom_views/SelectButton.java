@@ -3,19 +3,15 @@ package custom_views;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
-import android.view.View;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 
-import com.chaturvedi.kbc_prakalpa.MediaPlayerService;
 import com.chaturvedi.kbc_prakalpa.R;
 
 public class SelectButton extends Button
 {
 	private int BUTTON_WIDTH = 250;
 	private int BUTTON_HEIGHT = 40;
-	
-	private MediaPlayerService buttonClickPlayer;
 	
 	public SelectButton(Context context)
 	{
@@ -43,16 +39,6 @@ public class SelectButton extends Button
 		scale.setRepeatMode(ScaleAnimation.REVERSE);
 		super.startAnimation(scale);
 		
-		buttonClickPlayer = new MediaPlayerService(getContext(), "button_click");
-		super.setOnClickListener(new View.OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				clickButton();
-			}
-		});
-		
 		/*super.setOnTouchListener(new View.OnTouchListener()
 		{
 			
@@ -64,10 +50,5 @@ public class SelectButton extends Button
 				return false;
 			}
 		});*/
-	}
-	
-	public void clickButton()
-	{
-		buttonClickPlayer.playMusic();
 	}
 }
