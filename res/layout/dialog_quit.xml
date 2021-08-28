@@ -3,43 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    android:background="#0000FF" >
+    android:background="@drawable/dialog_quit" >
 
     <TextView
-        android:id="@+id/krishna"
+        android:id="@+id/view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/krishna" />
-
-    <TextView
-        android:id="@+id/timeout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/krishna"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="Time Out!!!"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ImageView
-        android:id="@+id/chocolate"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/timeout"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/chocolate" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Are You Sure You Want To Quit?"
+        android:textColor="#444444" />
 
     <custom_views.SelectButton
         android:id="@+id/button_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chocolate"
+        android:layout_below="@+id/view_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:text="Play Again" />
+        android:layout_marginTop="20dp"
+        android:text="Play On" />
 
     <custom_views.SelectButtonMini
         android:id="@+id/button_quit"
@@ -47,7 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_play"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
         android:text="Quit" />
 
 </RelativeLayout>

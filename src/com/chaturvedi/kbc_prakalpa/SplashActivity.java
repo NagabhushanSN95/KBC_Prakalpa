@@ -28,4 +28,10 @@ public class SplashActivity extends Activity
 		kbcPlayer = new MediaPlayerService(getApplicationContext(), "startup");
 		kbcPlayer.playMusic();
 	}
+	
+	// Disable Back Button
+	public void onBackPressed()
+	{
+		
+	}
 }

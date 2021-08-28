@@ -8,10 +8,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
+import custom_views.QuitDialog;
 import custom_views.SelectButton;
 
 public class MainActivity extends Activity
@@ -58,6 +58,7 @@ public class MainActivity extends Activity
 						level01Intent = new Intent(MainActivity.this, Level01Activity.class);
 						level01Intent.putExtra("LEVEL NO", 1);
 						startActivity(level01Intent);
+						finish();
 					}
 				});
 				playDialog.setNegativeButton("Nope", null);
@@ -75,5 +76,28 @@ public class MainActivity extends Activity
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
+	@Override
+	public void onBackPressed()
+	{
+		final QuitDialog quitDialog = new QuitDialog(this);
+		quitDialog.setOnPlayListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				quitDialog.dismiss();
+			}
+		});
+		quitDialog.setOnQuitListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				quitDialog.dismiss();
+				finish();
+			}
+		});
+		quitDialog.show();
+	}
 }

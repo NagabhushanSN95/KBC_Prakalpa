@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:keepScreenOn="true" >
 
     <TextView
         android:id="@+id/krishna"
@@ -13,10 +14,29 @@
 
     <ImageView
         android:id="@+id/chocolate"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/krishna"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/chocolate" />
+
+    <custom_views.SelectButton
+        android:id="@+id/button_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/chocolate"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/chocolate" />
+        android:layout_marginTop="27dp"
+        android:text="Play Again" />
+
+    <custom_views.SelectButtonMini
+        android:id="@+id/button_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_play"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Quit" />
 
 </RelativeLayout>

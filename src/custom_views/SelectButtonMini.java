@@ -10,20 +10,20 @@ import android.widget.Button;
 import com.chaturvedi.kbc_prakalpa.MediaPlayerService;
 import com.chaturvedi.kbc_prakalpa.R;
 
-public class SelectButton extends Button
+public class SelectButtonMini extends Button
 {
-	private int BUTTON_WIDTH = 250;
-	private int BUTTON_HEIGHT = 40;
+	private int BUTTON_WIDTH = 200;
+	private int BUTTON_HEIGHT = 30;
 	
 	private MediaPlayerService buttonClickPlayer;
 	
-	public SelectButton(Context context)
+	public SelectButtonMini(Context context)
 	{
 		super(context);
 		customizeButton();
 	}
 
-	public SelectButton(Context context, AttributeSet attrs)
+	public SelectButtonMini(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 		customizeButton();
@@ -34,7 +34,7 @@ public class SelectButton extends Button
 		super.setWidth(BUTTON_WIDTH);
 		super.setHeight(BUTTON_HEIGHT);
 		super.setTextColor(Color.WHITE);
-		super.setBackgroundResource(R.drawable.button_select);
+		super.setBackgroundResource(R.drawable.button_select_mini);
 		
 		ScaleAnimation scale = new ScaleAnimation(1.0f, 1.05f, 1.0f, 1.05f);
 		scale.setFillAfter(true);

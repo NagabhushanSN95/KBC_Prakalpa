@@ -193,6 +193,12 @@ public class Level03Activity extends Activity
 			// Stop The Timer Showing The Number Of Seconds Left
 			timer.stopTimer();
 			
+			// Disable all other buttons
+			for(int i=0; i<4; i++)
+			{
+				optionButtons[i].setClickable(false);
+			}
+			
 			new Handler().postDelayed(new Runnable() 
 			{
 				@Override

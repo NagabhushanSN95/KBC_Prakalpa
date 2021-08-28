@@ -85,4 +85,10 @@ public class LevelClearedActivity extends Activity
 		}
 		nextActivityIntent.putExtra("LEVEL NO", numLevelCleared+1);
 	}
+	
+	// Disable Back Button
+	public void onBackPressed()
+	{
+		
+	}
 }
