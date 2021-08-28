@@ -5,20 +5,31 @@
     android:background="#0000FF" >
 
     <TextView
-        android:id="@+id/congrats"
+        android:id="@+id/krishna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:text="@string/krishna" />
+
+    <TextView
+        android:id="@+id/congratsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/krishna"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:text="Congratulations!!!"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
     <RelativeLayout
+        android:id="@+id/layout_levelDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true" >
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/congratsView"
+        android:layout_marginTop="30dp" >
 
         <TextView
             android:id="@+id/question06"
@@ -26,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="54dp"
             android:text="Question 06"
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -37,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/question06"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:text="Question 05"
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -48,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/question05"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="Question 04"
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -59,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/question04"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:text="Question 03"
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -70,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/question03"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="Question 02"
             android:textColor="#FFFFFF"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -81,10 +91,19 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/question02"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:text="Question 01"
             android:textColor="#FFFF00"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </RelativeLayout>
+    
+    <custom_views.SelectButton
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_levelDisplay"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Next" />
 
 </RelativeLayout>

@@ -30,17 +30,11 @@ public class Question01Activity extends Activity
 	
 	private static int questionNo;
 	private String question;
-	private String optionA;
-	private String optionB;
-	private String optionC;
-	private String optionD;
+	private String[] options;
 	private int answer;
 	
 	private TextView questionView;
-	private OptionButton optionAButton;
-	private OptionButton optionBButton;
-	private OptionButton optionCButton;
-	private OptionButton optionDButton;
+	private OptionButton[] optionButtons;
 	
 	private long TIME_ALLOTED = 10000;
 	private Handler timeoutHandler;
@@ -86,7 +80,6 @@ public class Question01Activity extends Activity
 	private void readQuestion()
 	{
 		int numIgnoreLines = (questionNo-1)*7;
-		Toast.makeText(getApplicationContext(), "NumIgnoreLines= "+numIgnoreLines, Toast.LENGTH_SHORT).show();
 		
 		InputStream questionStream = getResources().openRawResource(R.raw.question01);
 		BufferedReader questionReader = new BufferedReader(new InputStreamReader(questionStream));
@@ -98,10 +91,11 @@ public class Question01Activity extends Activity
 			}
 			
 			question = questionReader.readLine();
-			optionA = questionReader.readLine();
-			optionB = questionReader.readLine();
-			optionC = questionReader.readLine();
-			optionD = questionReader.readLine();
+			options = new String[4];
+			for(int i=0; i<4; i++)
+			{
+				options[i] = questionReader.readLine();
+			}
 			answer = Integer.parseInt(questionReader.readLine());
 			
 			// Check if the file has reached the end. If so, set the questionNo=1 to point to first question again
@@ -132,37 +126,22 @@ public class Question01Activity extends Activity
 		questionView = (TextView) findViewById(R.id.questionView);
 		questionView.setText(question);
 		
-		optionAButton = (OptionButton) findViewById(R.id.button_optionA);
-		LayoutParams optionAParams = (LayoutParams) optionAButton.getLayoutParams();
-		optionAParams.width=WIDTH_OPTION_BUTTONS;
-		optionAParams.height=HEIGHT_OPTION_BUTTONS;
-		optionAButton.setLayoutParams(optionAParams);
-		optionAButton.setText(optionA);
-		optionAButton.setOnClickListener(new AnswerListener(1));
+		optionButtons = new OptionButton[4];
+		LayoutParams[] optionButtonParams = new LayoutParams[4];
 		
-		optionBButton = (OptionButton) findViewById(R.id.button_optionB);
-		LayoutParams optionBParams = (LayoutParams) optionBButton.getLayoutParams();
-		optionBParams.width=WIDTH_OPTION_BUTTONS;
-		optionBParams.height=HEIGHT_OPTION_BUTTONS;
-		optionBButton.setLayoutParams(optionBParams);
-		optionBButton.setText(optionB);
-		optionBButton.setOnClickListener(new AnswerListener(2));
-		
-		optionCButton = (OptionButton) findViewById(R.id.button_optionC);
-		LayoutParams optionCParams = (LayoutParams) optionCButton.getLayoutParams();
-		optionCParams.width=WIDTH_OPTION_BUTTONS;
-		optionCParams.height=HEIGHT_OPTION_BUTTONS;
-		optionCButton.setLayoutParams(optionCParams);
-		optionCButton.setText(optionC);
-		optionCButton.setOnClickListener(new AnswerListener(3));
-		
-		optionDButton = (OptionButton) findViewById(R.id.button_optionD);
-		LayoutParams optionDParams = (LayoutParams) optionDButton.getLayoutParams();
-		optionDParams.width=WIDTH_OPTION_BUTTONS;
-		optionDParams.height=HEIGHT_OPTION_BUTTONS;
-		optionDButton.setLayoutParams(optionDParams);
-		optionDButton.setText(optionD);
-		optionDButton.setOnClickListener(new AnswerListener(4));
+		optionButtons[0] = (OptionButton) findViewById(R.id.button_optionA);
+		optionButtons[1] = (OptionButton) findViewById(R.id.button_optionB);
+		optionButtons[2] = (OptionButton) findViewById(R.id.button_optionC);
+		optionButtons[3] = (OptionButton) findViewById(R.id.button_optionD);
+		for(int i=0; i<4; i++)
+		{
+			optionButtonParams[i] = (LayoutParams) optionButtons[i].getLayoutParams();
+			optionButtonParams[i].width=WIDTH_OPTION_BUTTONS;
+			optionButtonParams[i].height=HEIGHT_OPTION_BUTTONS;
+			optionButtons[i].setLayoutParams(optionButtonParams[i]);
+			optionButtons[i].setText(options[i]);
+			optionButtons[i].setOnClickListener(new AnswerListener(i+1));
+		}
 	}
 	
 	private class AnswerListener implements View.OnClickListener
@@ -197,20 +176,24 @@ public class Question01Activity extends Activity
 					// And Start The Corresponding Next Activities
 					if(optionNo==answer)
 					{
-						Toast.makeText(getApplicationContext(), "Correct Answer!", Toast.LENGTH_SHORT).show();
+						//Toast.makeText(getApplicationContext(), "Correct Answer!", Toast.LENGTH_SHORT).show();
 						button.displayCorrect();
 						MediaPlayerService.playMusic(getApplicationContext(), "cheer");
 						nextActivityIntent = new Intent(getApplicationContext(), Question01AnsweredActivity.class);
 					}
 					else
 					{
-						Toast.makeText(getApplicationContext(), "Incorrect Answer!", Toast.LENGTH_SHORT).show();
+						//Toast.makeText(getApplicationContext(), "Incorrect Answer!", Toast.LENGTH_SHORT).show();
 						button.displayIncorrect();
 						nextActivityIntent = new Intent(getApplicationContext(), Question01FailedActivity.class);
+						
+						// Display The Correct Answer
+						optionButtons[answer-1].displayCorrect();
 					}
 				}
 			} ,2000);
 			
+			// Start The Next Activity After 4seconds i.e. 2seconds after the result is displayed
 			new Handler().postDelayed(new Runnable() 
 			{
 				@Override
