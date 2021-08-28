@@ -47,7 +47,7 @@ How many junctions does a BJT Transistor have?
 0
 2
 
-What is the probability of getting a 1 in the second dice, when two die are rolled, given that 2 is obtained in second die
+What is the probability of getting a 1 in the first dice, when two die are rolled, given that 2 is obtained in second die
 1/36
 1/6
 2/36

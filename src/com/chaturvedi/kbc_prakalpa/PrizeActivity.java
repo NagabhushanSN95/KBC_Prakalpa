@@ -34,7 +34,7 @@ public class PrizeActivity extends Activity
 		
 		buildAnimations();
 		buildLayout();
-		splashIntent = new Intent(this, SplashActivity.class);
+		splashIntent = new Intent(this, MainActivity.class);
 	}
 	
 	private void buildAnimations()

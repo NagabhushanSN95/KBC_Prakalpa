@@ -30,7 +30,7 @@ public class TimeoutActivity extends Activity
 
 		MediaPlayerService.playSound(getApplicationContext(), "buzzer");
 		buildLayout();
-		splashIntent = new Intent(this, SplashActivity.class);
+		splashIntent = new Intent(this, MainActivity.class);
 	}
 	
 	private void buildLayout()

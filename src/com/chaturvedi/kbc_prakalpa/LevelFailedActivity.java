@@ -29,7 +29,7 @@ public class LevelFailedActivity extends Activity
 		levelNo = previousActivityIntent.getIntExtra("NUM LEVEL FAILED", 1);
 		
 		buildLayout();
-		splashIntent = new Intent(this, SplashActivity.class);
+		splashIntent = new Intent(this, MainActivity.class);
 	}
 	
 	private void buildLayout()

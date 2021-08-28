@@ -3,7 +3,7 @@ The value of 'a' when the following 'C' Statement is executed: a=((-5%3)+2)*7+5*
 13
 41
 76
-
+2
 
 Two moving trains separated by 6000m are approaching each other with velocities 30kmph and 90kmph. What is the time taken by them to collide
 3 Minutes
